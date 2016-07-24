@@ -1,4 +1,4 @@
-# Sutile\Cache
+# Cache
 This is a light cache component;
 Based on memstore (memcache, memcached, redis)
 
