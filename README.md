@@ -1,6 +1,7 @@
 # Cache
 This is a light cache component;
 Based on memstore (memcache, memcached, redis)
+memstore: https://github.com/flatphp/memstore
 
 
 ## Install
@@ -23,6 +24,8 @@ composer require "flatphp/cache"
 
 ## Useage
 ```PHP
+use Flatphp\Cache\Cache;
+
 Cache::set('test', 1, 60);
 echo Cache::get('test');
 Cache::delete('test');
