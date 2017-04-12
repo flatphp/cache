@@ -11,12 +11,11 @@
     ],
     "require": {
 	"php": ">=5.5",
-	"flatphp/memstore": "*"
+	"flatphp/memstore": "1.0"
     },
     "autoload": {
         "psr-4": {
             "Flatphp\\Cache\\": ""
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
