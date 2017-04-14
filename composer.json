@@ -11,7 +11,7 @@
     ],
     "require": {
 	"php": ">=5.5",
-	"flatphp/memstore": "1.0"
+	"flatphp/memstore": "2.0.*"
     },
     "autoload": {
         "psr-4": {

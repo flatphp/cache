@@ -1,13 +1,13 @@
 <?php namespace Flatphp\Cache\Adapter;
 
-class Redis implements AdapterInterface
+class RedisCluster implements AdapterInterface
 {
     /**
-     * @var \Redis
+     * @var \RedisCluster
      */
     protected $_redis = null;
 
-    public function __construct(\Redis $redis)
+    public function __construct(\RedisCluster $redis)
     {
         $this->_redis = $redis;
     }
@@ -44,7 +44,7 @@ class Redis implements AdapterInterface
      */
     public function delete($key)
     {
-        $this->_redis->delete($key);
+        $this->_redis->del($key);
     }
 
     /**
@@ -52,7 +52,7 @@ class Redis implements AdapterInterface
      */
     public function flush()
     {
-        $this->_redis->flushDB();
+        $this->_redis->flushdb();
     }
 
     /**
@@ -60,7 +60,7 @@ class Redis implements AdapterInterface
      */
     public function increment($key, $offset = 1)
     {
-        return $this->_redis->incrBy($key, $offset);
+        return $this->_redis->incrby($key, $offset);
     }
 
     /**
@@ -68,7 +68,7 @@ class Redis implements AdapterInterface
      */
     public function decrement($key, $offset = 1)
     {
-        return $this->_redis->decrBy($key, $offset);
+        return $this->_redis->decrby($key, $offset);
     }
 
     /**

@@ -1,14 +1,13 @@
 <?php namespace Flatphp\Cache\Adapter;
-use Flatphp\Memstore\Memcache as MemcacheStore;
 
 class Memcache implements AdapterInterface
 {
     /**
-     * @var MemcacheStore
+     * @var \Memcache
      */
     protected $_mc = null;
 
-    public function __construct(MemcacheStore $mc)
+    public function __construct(\Memcache $mc)
     {
         $this->_mc = $mc;
     }

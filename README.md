@@ -1,7 +1,7 @@
 # Cache
-This is a light cache component;
-Based on memstore (memcache, memcached, redis)
-memstore: https://github.com/flatphp/memstore
+Light cache component;
+
+relate: https://github.com/flatphp/memstore
 
 
 ## Install
@@ -14,10 +14,29 @@ composer require "flatphp/cache"
 ## Init Config
 
 ```PHP
-\Flatphp\Cache\Cache::config(array(
+use Flatphp\Memstore\Conn;
+use Flatphp\Cache\Cache;
+
+Conn::init(array(
+    'memcache' => ['host' => '127.0.0.1', 'port' => 11211]
+));
+
+Cache::init(array(
     'expiration' => 3600, // the default expiration, 0 forever[default]
     'storage' => 'memcache',
 ));
+
+// -------- OR --------------------
+
+Cache::init(array(
+    'expiration' => 3600, // the default expiration, 0 forever[default]
+    'storage' => array(
+        'driver' => 'redis',
+	'host' => 'localhost',
+	'port' => 6379
+    )
+));
+
 ```
 
 
