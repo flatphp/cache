@@ -54,7 +54,7 @@ class Cache
     public static function getBackend()
     {
         if (null === self::$_backend) {
-            self::$_backend = new Backend(self::_getAdapter(), self::$_config);
+            self::$_backend = new Backend(self::getAdapter(), self::$_config);
         }
         return self::$_backend;
     }
@@ -62,7 +62,7 @@ class Cache
     /**
      * @return Adapter\AdapterInterface
      */
-    protected static function _getAdapter()
+    public static function getAdapter()
     {
         if (!self::$_adapter) {
             if (empty(self::$_config['store'])) {
